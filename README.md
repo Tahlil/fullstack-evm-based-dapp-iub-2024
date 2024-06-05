@@ -29,11 +29,11 @@ If you want to learn how to interact with a simple smart contract from the clien
 
 #### Contracts Scripts
 
-- `pnpm start` - Starts your local Hardhat network
-- `pnpm test` - Tests `Greeter.sol`'s functionality
-- `pnpm deploy` - Deploys `Greeter.sol` to your local Hardhat network
-- `pnpm deploy:sepolia` - Deploys `Greeter.sol` to the Sepolia test network
-- `pnpm format` - Formats all code using Prettier
+- `yarn start` - Starts your local Hardhat network
+- `yarn test` - Tests `Greeter.sol`'s functionality
+- `yarn deploy` - Deploys `Greeter.sol` to your local Hardhat network
+- `yarn deploy:sepolia` - Deploys `Greeter.sol` to the Sepolia test network
+- `yarn format` - Formats all code using Prettier
 
 ### App
 
@@ -52,11 +52,11 @@ If you want to learn how to interact with a simple smart contract from the clien
 
 #### App Scripts
 
-- `pnpm dev` - Starts the Next.js local development environment
-- `pnpm build` - Creates an optimised production build of your app
-- `pnpm start` - Starts the Next.js application in production mode
-- `pnpm lint` - Checks for problems in your code using ESLint
-- `pnpm format` - Formats all code using Prettier
+- `yarn dev` - Starts the Next.js local development environment
+- `yarn build` - Creates an optimised production build of your app
+- `yarn start` - Starts the Next.js application in production mode
+- `yarn lint` - Checks for problems in your code using ESLint
+- `yarn format` - Formats all code using Prettier
 
 ## Prerequisites
 
