@@ -8,13 +8,13 @@ import '@typechain/hardhat'
 import '@nomiclabs/hardhat-ethers';
 
 const chainIds = {
-  goerli: 5,
+  goerli: 5, // deprecated
   hardhat: 31337,
-  kovan: 42,
+  kovan: 42, // deprecated
   mainnet: 1,
-  rinkeby: 4,
+  rinkeby: 4, // deprecated
   sepolia: 11155111,
-  ropsten: 3,
+  ropsten: 3, // deprecated
   bsctest: 97,
   bscmain: 56,
   mumbai: 80001,
@@ -146,7 +146,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: '0.8.17',
+        version: '0.8.19',
         settings: { optimizer: { enabled: true, runs: 200 } },
       },
     ],
