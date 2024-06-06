@@ -17,12 +17,16 @@ const chainIds = {
   ropsten: 3, // deprecated
   bsctest: 97,
   bscmain: 56,
-  mumbai: 80001,
+  amoy: 80002,
   polygon: 137,
   fuji: 43113,
   avalanche: 43114,
   alfajores: 44787,
-  celo: 42220
+  celo: 42220,
+  lineaSepolia: 59141,
+  linea: 59144,
+  arbitrumSepolia: 421614,
+  arbitrum: 42161
 };
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
@@ -105,9 +109,9 @@ const config: HardhatUserConfig = {
       gasPrice: 20000000000,
       accounts: [`0x${PRIVATE_KEY}`],
     },
-    mumbai: {
-      url: 'https://rpc-mumbai.maticvigil.com/',
-      chainId: chainIds.mumbai,
+    amoy: {
+      url: 'https://rpc-amoy.polygon.technology/',
+      chainId: chainIds.amoy,
       gasPrice: 20000000000,
       accounts: [`0x${PRIVATE_KEY}`],
     },
@@ -139,6 +143,26 @@ const config: HardhatUserConfig = {
       url: 'https://forno.celo.org',
       chainId: chainIds.celo,
       // gasPrice: 20000000000,
+      accounts: [`0x${PRIVATE_KEY}`],
+    },
+    lineaSepolia: {
+      url: getRPCURL("linea-sepolia", defaultRPCNodeProvider), // public URL: 'https://linea-sepolia.blockpi.network/v1/rpc/',
+      chainId: chainIds.lineaSepolia,
+      accounts: [`0x${PRIVATE_KEY}`],
+    },
+    linea: {
+      url: getRPCURL("linea", defaultRPCNodeProvider), // public URL: 'https://rpc.linea.build',
+      chainId: chainIds.linea,
+      accounts: [`0x${PRIVATE_KEY}`],
+    },
+    arbitrumSepolia: {
+      url: getRPCURL("arbitrum-sepolia", defaultRPCNodeProvider),
+      chainId: chainIds.arbitrumSepolia,
+      accounts: [`0x${PRIVATE_KEY}`],
+    },
+    arbitrum: {
+      url: getRPCURL("arbitrum", defaultRPCNodeProvider),
+      chainId: chainIds.arbitrum,
       accounts: [`0x${PRIVATE_KEY}`],
     },
   },
