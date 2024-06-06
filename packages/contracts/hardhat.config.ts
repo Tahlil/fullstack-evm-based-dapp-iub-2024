@@ -156,8 +156,7 @@ const config: HardhatUserConfig = {
     enabled: true,
   },
   typechain: {
-    outDir: "./frontend/typechain",
-    target: "ethers-v5",
+    outDir: "typechain",
   },
   etherscan: {
     apiKey: {
