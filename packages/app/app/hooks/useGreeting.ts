@@ -7,7 +7,7 @@ import {
   useWriteContract,
   useWaitForTransactionReceipt,
 } from "wagmi";
-import abi from "../abi/greeter.json";
+import abi from "../abi/abi.json";
 
 const useGreeting = ({
   newGreeting,

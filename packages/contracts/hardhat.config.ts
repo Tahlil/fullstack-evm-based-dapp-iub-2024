@@ -1,11 +1,7 @@
-import { config as dotenvConfig } from "dotenv";
-dotenvConfig({ path: __dirname + "/.env" });
-
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import "@nomiclabs/hardhat-solhint";
-import '@typechain/hardhat'
-import '@nomiclabs/hardhat-ethers';
+import { config as dotenvConfig } from "dotenv";
+dotenvConfig({ path: __dirname + "/.env" });
 
 const chainIds = {
   goerli: 5, // deprecated
@@ -33,7 +29,6 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const API_KEY  = process.env.RPC_NODE_API_KEY;
 const MNEMONIC  = process.env.MNEMONIC;
 const ETHERSCAN_API_KEY  = process.env.ETHERSCAN_API_KEY as string;
-
 const defaultRPCNodeProvider = process.env.RPC_PROVIDER as string;
 
 const getRPCURL = (network: string, RPCNodeProvider: string) => {
@@ -55,8 +50,6 @@ const getRPCURL = (network: string, RPCNodeProvider: string) => {
   }
   return;
 };
-
-
 
 const config: HardhatUserConfig = {
   defaultNetwork: 'hardhat',
@@ -166,7 +159,6 @@ const config: HardhatUserConfig = {
       accounts: [`0x${PRIVATE_KEY}`],
     },
   },
- 
   solidity: {
     compilers: [
       {
@@ -178,9 +170,6 @@ const config: HardhatUserConfig = {
   gasReporter: {
     currency: 'USD',
     enabled: true,
-  },
-  typechain: {
-    outDir: "typechain",
   },
   etherscan: {
     apiKey: {
