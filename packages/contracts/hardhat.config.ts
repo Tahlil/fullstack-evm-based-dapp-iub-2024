@@ -147,6 +147,7 @@ const config: HardhatUserConfig = {
       url: getRPCURL("linea", defaultRPCNodeProvider), // public URL: 'https://rpc.linea.build',
       chainId: chainIds.linea,
       accounts: [`0x${PRIVATE_KEY}`],
+      explorerURL: ""
     },
     arbitrumSepolia: {
       url: getRPCURL("arbitrum-sepolia", defaultRPCNodeProvider),
