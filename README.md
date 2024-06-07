@@ -30,6 +30,7 @@ If you want to learn how to interact with a simple smart contract from the clien
 #### Contracts Scripts
 
 - `yarn start` - Starts your local Hardhat network
+- `yarn compile` - Compile `Greeter.sol` and other contracts
 - `yarn test` - Tests `Greeter.sol`'s functionality
 - `yarn deploy` - Deploys `Greeter.sol` to your local Hardhat network
 - `yarn deploy:sepolia` - Deploys `Greeter.sol` to the Sepolia test network

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 // @dev Remove the console import if you don't want to use it
 import "hardhat/console.sol";

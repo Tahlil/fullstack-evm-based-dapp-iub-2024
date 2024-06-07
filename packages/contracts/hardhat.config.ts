@@ -146,8 +146,7 @@ const config: HardhatUserConfig = {
     linea: {
       url: getRPCURL("linea", defaultRPCNodeProvider), // public URL: 'https://rpc.linea.build',
       chainId: chainIds.linea,
-      accounts: [`0x${PRIVATE_KEY}`],
-      explorerURL: ""
+      accounts: [`0x${PRIVATE_KEY}`]
     },
     arbitrumSepolia: {
       url: getRPCURL("arbitrum-sepolia", defaultRPCNodeProvider),
@@ -163,7 +162,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: '0.8.19',
+        version: '0.8.20',
         settings: { optimizer: { enabled: true, runs: 200 } },
       },
     ],

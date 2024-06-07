@@ -30,6 +30,7 @@
         "@nomicfoundation/hardhat-network-helpers": "^1.0.9",
         "@nomicfoundation/hardhat-toolbox": "^3.0.0",
         "@nomicfoundation/hardhat-verify": "^1.1.1",
+        "@openzeppelin/hardhat-upgrades": "^3.1.1",
         "@typechain/ethers-v6": "^0.5.0",
         "@typechain/hardhat": "^9.0.0",
         "chai": "^4.3.8",
@@ -42,6 +43,7 @@
     },
     "dependencies": {
         "@nomiclabs/hardhat-solhint": "^3.1.0",
+        "@openzeppelin/contracts": "^5.0.2",
         "dotenv": "^16.4.5"
     }
 }
