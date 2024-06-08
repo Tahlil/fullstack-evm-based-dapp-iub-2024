@@ -144,6 +144,40 @@ contract MyContract {
     function deleteFromTwoDimensionalMapping(uint256 _key1, uint256 _key2) external {
         delete twoDimensionalMapping[_key1][_key2];
     }
+
+    receive() external payable {
+        // Receive ether
+    }
+
+    // Send ether from contract to address
+    function sendEther(address payable _to, uint256 _amount) external {
+        require(address(this).balance >= _amount, "Insufficient balance");
+        _to.transfer(_amount);
+    }
+
+    // Send ether from caller to address
+    function sendEtherFromCaller(address payable _to, uint256 _amount) external payable {
+        require(msg.value >= _amount, "Insufficient ether sent");
+        _to.transfer(_amount);
+    }
+
+    // Send ERC20 tokens to contract
+    function sendERC20(address _tokenAddress, uint256 _amount) external {
+        IERC20 token = IERC20(_tokenAddress);
+        require(token.transferFrom(msg.sender, address(this), _amount), "Transfer failed");
+    }
+
+    // Send ERC20 tokens from contract to address
+    function sendERC20To(address _tokenAddress, address _to, uint256 _amount) external {
+        IERC20 token = IERC20(_tokenAddress);
+        require(token.transfer(_to, _amount), "Transfer failed");
+    }
+
+    // Send ERC20 tokens from caller to address
+    function sendERC20FromCaller(address _tokenAddress, address _to, uint256 _amount) external {
+        IERC20 token = IERC20(_tokenAddress);
+        require(token.transferFrom(msg.sender, _to, _amount), "Transfer failed");
+    }
 }
 
 contract AnotherContract {
