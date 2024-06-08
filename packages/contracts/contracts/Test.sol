@@ -215,3 +215,60 @@ contract AnotherContract {
         storedValue = newValue;
     }
 }
+
+contract PushMethod {
+    mapping(address => uint256) public balances;
+
+    // Function to deposit Ether into the contract
+    function deposit() external payable {
+        balances[msg.sender] += msg.value;
+    }
+
+    // Function to push funds from the contract to an address
+    function pushFunds(address payable _to, uint256 _amount) external {
+        require(balances[msg.sender] >= _amount, "Insufficient balance");
+        balances[msg.sender] -= _amount;
+        _to.transfer(_amount);
+    }
+
+    // Function to distribute funds to multiple addresses
+    function distributeFunds(address payable[] memory recipients, uint256[] memory amounts) external {
+        require(recipients.length == amounts.length, "Arrays must be of the same length");
+
+        for (uint256 i = 0; i < recipients.length; i++) {
+            uint256 amount = amounts[i];
+            require(balances[msg.sender] >= amount, "Insufficient balance");
+            balances[msg.sender] -= amount;
+            recipients[i].transfer(amount);
+        }
+    }
+}
+
+contract PullMethod {
+    mapping(address => uint256) public balances;
+
+    // Function to deposit Ether into the contract
+    function deposit() external payable {
+        balances[msg.sender] += msg.value;
+    }
+
+    // Function to withdraw Ether from the contract
+    function withdraw(uint256 _amount) external {
+        require(balances[msg.sender] >= _amount, "Insufficient balance");
+
+        balances[msg.sender] -= _amount;
+       
+        (bool success, ) = msg.sender.call{value: _amount}("");
+        require(success, "Transfer failed");
+    }
+
+    // Function to check balance of the contract
+    function getContractBalance() external view returns (uint256) {
+        return address(this).balance;
+    }
+
+    // Function to check balance of a specific user
+    function getUserBalance(address _user) external view returns (uint256) {
+        return balances[_user];
+    }
+}
