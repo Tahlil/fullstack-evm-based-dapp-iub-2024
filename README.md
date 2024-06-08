@@ -18,7 +18,7 @@ If you want to learn how to interact with a simple smart contract from the clien
 `packages/contracts` - All smart contract files.
 
 ### Typescript setup 
-```
+
 npm install -g typescript ts-node
 ```
 

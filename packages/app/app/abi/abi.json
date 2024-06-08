@@ -24,6 +24,13 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "payMe",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "string",

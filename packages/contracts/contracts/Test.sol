@@ -178,6 +178,30 @@ contract MyContract {
         IERC20 token = IERC20(_tokenAddress);
         require(token.transferFrom(msg.sender, _to, _amount), "Transfer failed");
     }
+
+    // Check effect interaction pattern
+    mapping(address => uint256) public balances;
+    mapping(address => bool) public claimed;
+
+    function deposit() external payable {
+        balances[msg.sender] += msg.value;
+    }
+
+    function withdraw(uint256 _amount) external {
+        require(balances[msg.sender] >= _amount, "Insufficient balance");
+        balances[msg.sender] -= _amount;
+        (bool success, ) = msg.sender.call{value: _amount}("");
+        require(success, "Transfer failed");
+    }
+
+    function claim() external {
+        require(!claimed[msg.sender], "Already claimed");
+        claimed[msg.sender] = true;
+        uint256 amount = balances[msg.sender];
+        balances[msg.sender] = 0;
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success, "Transfer failed");
+    }
 }
 
 contract AnotherContract {

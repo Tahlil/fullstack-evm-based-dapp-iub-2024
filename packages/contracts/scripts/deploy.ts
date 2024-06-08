@@ -24,6 +24,7 @@ async function main() {
   const greeter: Greeter = await ethers.deployContract("Greeter", [
     greeting
   ]);
+ 
   await greeter.waitForDeployment();
   console.log(
     `Greeter with greeting "${greeting}" deployed to ${greeter.target}`,
