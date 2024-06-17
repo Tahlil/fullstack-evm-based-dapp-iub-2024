@@ -54,12 +54,12 @@ const getRPCURL = (network: string, RPCNodeProvider: string) => {
 const config: HardhatUserConfig = {
   defaultNetwork: 'hardhat',
   networks: {
-    hardhat: {
-      accounts: {
-        mnemonic: MNEMONIC,
-      },
-      chainId: chainIds.hardhat,
-    },
+    // hardhat: {
+    //   accounts: {
+    //     mnemonic: MNEMONIC,
+    //   },
+    //   chainId: chainIds.hardhat,
+    // },
     ropsten: {
       url: getRPCURL('ropsten', defaultRPCNodeProvider),
       accounts:  [`0x${PRIVATE_KEY}`],
