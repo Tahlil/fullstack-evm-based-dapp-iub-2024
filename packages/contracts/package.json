@@ -20,6 +20,8 @@
         "deploy:bscmain": "npx hardhat run --network bscmain scripts/deploy.ts",
         "deploy:lineaSepolia": "npx hardhat run --network lineaSepolia scripts/deploy.ts",
         "deploy:linea": "npx hardhat run --network linea scripts/deploy.ts",
+        "deployup": "npx hardhat run scripts/deployUpgradable.ts --network lineaSepolia",
+        "upgrad": "npx hardhat run scripts/upgrade.ts --network lineaSepolia",
         "test:fast": "TS_NODE_TRANSPILE_ONLY=1 npx hardhat test",
         "verify:sepolia": "hardhat verify --network sepolia",
         "format": "prettier --write \"./contracts/**/*.sol\" --plugin prettier-plugin-solidity && prettier --write \"./**/*.ts\""
@@ -46,6 +48,8 @@
     "dependencies": {
         "@nomiclabs/hardhat-solhint": "^3.1.0",
         "@openzeppelin/contracts": "^5.0.2",
+        "@openzeppelin/contracts-upgradeable": "^5.0.2",
+        "@openzeppelin/hardhat-upgrades": "^3.1.1",
         "dotenv": "^16.4.5"
     }
 }

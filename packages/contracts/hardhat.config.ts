@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@openzeppelin/hardhat-upgrades";
 import { config as dotenvConfig } from "dotenv";
 dotenvConfig({ path: __dirname + "/.env" });
 
@@ -141,6 +142,7 @@ const config: HardhatUserConfig = {
     lineaSepolia: {
       url: getRPCURL("linea-sepolia", defaultRPCNodeProvider), // public URL: 'https://linea-sepolia.blockpi.network/v1/rpc/',
       chainId: chainIds.lineaSepolia,
+      gasPrice: 20000000000,
       accounts: [`0x${PRIVATE_KEY}`],
     },
     linea: {
