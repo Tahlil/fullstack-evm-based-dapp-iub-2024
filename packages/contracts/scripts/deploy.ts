@@ -14,6 +14,7 @@ const abiRead = fs.readFileSync(abiPath, 'utf8');
 
 const chainIdToExplorer: { [key: number]: string } = {
   59141: "https://sepolia.lineascan.build/address/",
+  11155111: "https://sepolia.etherscan.io/address/",
   0: "Unknown/"
 }
 
