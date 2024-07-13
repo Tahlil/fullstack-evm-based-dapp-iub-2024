@@ -8,21 +8,8 @@
     "scripts": {
         "start": "hardhat node",
         "test": "hardhat test",
-        "compile": "npx hardhat compile",
         "deploy": "hardhat run --network localhost scripts/deploy.ts",
-        "deploy:rinkeby": "npx hardhat run --network rinkeby scripts/deploy.ts",
-        "deploy:ropsten": "npx hardhat run --network ropsten scripts/deploy.ts",
-        "deploy:goerli": "npx hardhat run --network goerli scripts/deploy.ts",
-        "deploy:sepolia": "npx hardhat run --network sepolia scripts/deploy.ts",
-        "deploy:kovan": "npx hardhat run --network kovan scripts/deploy.ts",
-        "deploy:mainnet": "npx hardhat run --network mainnet scripts/deploy.ts",
-        "deploy:bsctest": "npx hardhat run --network kovan scripts/deploy.ts",
-        "deploy:bscmain": "npx hardhat run --network bscmain scripts/deploy.ts",
-        "deploy:lineaSepolia": "npx hardhat run --network lineaSepolia scripts/deploy.ts",
-        "deploy:linea": "npx hardhat run --network linea scripts/deploy.ts",
-        "deployup": "npx hardhat run scripts/deployUpgradable.ts --network lineaSepolia",
-        "upgrad": "npx hardhat run scripts/upgrade.ts --network lineaSepolia",
-        "test:fast": "TS_NODE_TRANSPILE_ONLY=1 npx hardhat test",
+        "deploy:sepolia": "hardhat run --network sepolia scripts/deploy.ts",
         "verify:sepolia": "hardhat verify --network sepolia",
         "format": "prettier --write \"./contracts/**/*.sol\" --plugin prettier-plugin-solidity && prettier --write \"./**/*.ts\""
     },
@@ -32,24 +19,18 @@
         "@nomicfoundation/hardhat-network-helpers": "^1.0.9",
         "@nomicfoundation/hardhat-toolbox": "^3.0.0",
         "@nomicfoundation/hardhat-verify": "^1.1.1",
-        "@openzeppelin/hardhat-upgrades": "^3.1.1",
         "@typechain/ethers-v6": "^0.5.0",
         "@typechain/hardhat": "^9.0.0",
-        "@types/node": "^20.14.2",
         "chai": "^4.3.8",
+        "ethers": "^6.7.1",
         "hardhat": "^2.17.3",
         "hardhat-gas-reporter": "^1.0.9",
         "prettier": "^3.0.3",
         "prettier-plugin-solidity": "^1.1.3",
         "solidity-coverage": "^0.8.4",
-        "ts-node": "^10.9.2",
         "typechain": "^8.3.1"
     },
     "dependencies": {
-        "@nomiclabs/hardhat-solhint": "^3.1.0",
-        "@openzeppelin/contracts": "^5.0.2",
-        "@openzeppelin/contracts-upgradeable": "^5.0.2",
-        "@openzeppelin/hardhat-upgrades": "^3.1.1",
-        "dotenv": "^16.4.5"
+        "dotenv": "^16.3.1"
     }
 }

@@ -1,4 +1,4 @@
-# Solidity Next.js Starter Fullstack dapp - 2024
+# Solidity Next.js Starter
 
 A starter repository for building full stack Ethereum dApps with [Solidity](https://soliditylang.org/) and [Next.js](https://nextjs.org/).
 
@@ -17,11 +17,6 @@ If you want to learn how to interact with a simple smart contract from the clien
 
 `packages/contracts` - All smart contract files.
 
-### Typescript setup 
-
-npm install -g typescript ts-node
-```
-
 #### Contracts Stack
 
 - [Alchemy](https://www.alchemy.com/)
@@ -35,7 +30,6 @@ npm install -g typescript ts-node
 #### Contracts Scripts
 
 - `yarn start` - Starts your local Hardhat network
-- `yarn compile` - Compile `Greeter.sol` and other contracts
 - `yarn test` - Tests `Greeter.sol`'s functionality
 - `yarn deploy` - Deploys `Greeter.sol` to your local Hardhat network
 - `yarn deploy:sepolia` - Deploys `Greeter.sol` to the Sepolia test network
@@ -75,7 +69,11 @@ How to get running on your local machine:
 
 ### Initial Setup
 
-Use `yarn` command on the root folder to install all the dependencies.
+Use `git clone https://github.com/tomhirst/solidity-nextjs-starter.git` to clone this repository to your local machine.
+
+Enter the repository folder with `cd solidity-nextjs-starter`, then install all dependencies using `yarn`.
+
+Solidity Next.js Starter uses Yarn workspaces, so this will install the relevant dependencies for each packages in one command.
 
 ### Contracts Setup
 

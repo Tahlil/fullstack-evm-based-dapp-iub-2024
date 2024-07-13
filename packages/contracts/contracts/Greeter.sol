@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.9;
 
 // @dev Remove the console import if you don't want to use it
 import "hardhat/console.sol";
@@ -14,8 +14,6 @@ contract Greeter {
      * @dev Stores a greeting string
      */
     string greeting;
-    mapping (address => uint256) balances;
-
 
     /**
      * @dev Constructor sets the greeting string
@@ -46,9 +44,4 @@ contract Greeter {
 
         greeting = _greeting;
     }
-
-    function payMe() external payable {
-        require((msg.value>0.1 ether), "This is an error");
-        balances[msg.sender] = balances[msg.sender] + msg.value;
-    } 
 }
