@@ -40,6 +40,21 @@
       "address": "0xa7d10dA15D3463C18F597faB65814d67E0442058",
       "txHash": "0x709823d39660011776e7ace668c8ac9b691c89029b399b83c46aa4f518aea9db",
       "kind": "uups"
+    },
+    {
+      "address": "0x5E0cfd90A8d4b032932FF8092EDB4F00911e76C4",
+      "txHash": "0x3655de6bb2ceb7d13cb29d5ba222d7e8ea7332b49dd589a1332204bc7f7ba321",
+      "kind": "uups"
+    },
+    {
+      "address": "0xc9d88B3E8E04cd077E974Cc30ccFe53D5e08c723",
+      "txHash": "0x0ce638c827832f0dd619c10b109a0a62aef1e5f9706dfa15a19bee525dbba567",
+      "kind": "uups"
+    },
+    {
+      "address": "0xdCd0A5579029Eab1062Fce4557694187fF2AC649",
+      "txHash": "0xcf5594eb81e3ca42f7fbc0400c19afd5a403d8dfb5694121d3d6c76229345b02",
+      "kind": "uups"
     }
   ],
   "impls": {
@@ -329,6 +344,8 @@
       },
       "allAddresses": [
         "0x92Ce67f133d569a671A249c78032b79FF7Dd8B05",
+        "0xF38FDe5f7a0A7226F83F0698e8CaE8df51397069",
+        "0xCED62DC559700AD75Dd68650f2B946a20854759D",
         "0x99eD3dc928B188E74449308b5D7D555E4Df2161b",
         "0x86E9A0944C1BB7f08655BC7d4a324dCF3e9FEFc5",
         "0x03b2BB41C95DD6b948e6e1384CdcfEd93075Bd74",
@@ -429,6 +446,105 @@
           ]
         }
       }
+    },
+    "a654f617a881befc56757c1ff977cc3117945016db8092f1ef404d82a0ef0845": {
+      "address": "0xcfD741E40d6Ada13e06ed66E532AFF93728A56Be",
+      "txHash": "0x235036342c54674d10a3c5c0d3d8c143c6e38cde9f0169963cbf4981560f2944",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "MyImplementationV2",
+            "src": "contracts/upgradable/implv2.sol:8"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)65_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)14_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      },
+      "allAddresses": [
+        "0xcfD741E40d6Ada13e06ed66E532AFF93728A56Be",
+        "0x4704b837E4b4023764264b7ddc8e6fc2930E3fF9"
+      ]
     }
   }
 }

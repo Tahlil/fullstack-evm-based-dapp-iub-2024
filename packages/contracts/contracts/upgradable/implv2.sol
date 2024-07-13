@@ -14,9 +14,5 @@ contract MyImplementationV2 is Initializable, UUPSUpgradeable, OwnableUpgradeabl
         value = _value + 1; // New logic: increment the value by 1
     }
 
-    function newFunction() public pure returns (string memory) {
-        return "New Functionality";
-    }
-
     function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 }
